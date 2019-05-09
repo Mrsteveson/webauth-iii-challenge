@@ -1,3 +1,5 @@
+// Mostly just here for reference.
+// Is the method Dustin taught to do axios with headers.
 import axios from 'axios';
 
 export default function() {

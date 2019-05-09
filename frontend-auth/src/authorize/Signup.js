@@ -20,14 +20,14 @@ class Signup extends React.Component {
         axios
         .post('http://localhost:5000/api/auth/register', this.state)
         .then(res => {
-            // localStorage.setItem('token', res.data.token);
+            localStorage.setItem('token', res.data.token);
             console.log(res);
             this.setState({
                 username: '',
                 password: '',
                 department: ''
             })
-            this.props.history.push('/login')
+            this.props.history.push('/users')
         })
         .catch(err => console.log(err))
     };

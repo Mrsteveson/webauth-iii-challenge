@@ -17,7 +17,8 @@ router.post('/register', (req, res) => {
     } else {
         db.addNew(user)
         .then(regUser => {
-        res.status(201).json(regUser)
+        const token = generateToken(regUser)
+        res.status(201).json({regUser, token})
         })
         .catch(err => {
         res.status(500).json(err.message)
